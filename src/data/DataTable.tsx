@@ -63,8 +63,32 @@ const clickedControl = (event: MouseEvent): boolean =>
 const selectingText = (): boolean =>
   (window.getSelection()?.toString() ?? '') !== '';
 
-const Frame = ({ children }: { children: ReactNode }) => (
-  <Paper radius="lg" shadow="xs" bg="white">
+const filling = {
+  flex: 1,
+  minHeight: 0,
+  display: 'flex',
+  flexDirection: 'column',
+} as const;
+
+interface FrameProps {
+  fill?: boolean;
+  children: ReactNode;
+}
+
+const Frame = ({ fill = false, children }: FrameProps) => (
+  <Paper
+    radius="lg"
+    shadow="xs"
+    bg="white"
+    style={
+      fill
+        ? {
+            ...filling,
+            overflow: 'hidden',
+          }
+        : undefined
+    }
+  >
     {children}
   </Paper>
 );
@@ -215,13 +239,22 @@ export const DataTable = <T,>({
       opacity={stale ? 0.6 : 1}
       style={{
         transition: 'opacity 150ms',
+        ...filling,
       }}
     >
-      <Box visibleFrom="sm">
-        <Frame>
-          <Table.ScrollContainer minWidth={720} type="native">
+      <Box visibleFrom="sm" style={filling}>
+        <Frame fill>
+          <Table.ScrollContainer
+            minWidth={720}
+            type="native"
+            style={{
+              flex: 1,
+              minHeight: 0,
+            }}
+          >
             <Table
               aria-label={label}
+              stickyHeader
               verticalSpacing={8}
               horizontalSpacing="md"
               borderColor="gray.1"
@@ -319,6 +352,11 @@ export const DataTable = <T,>({
         m={0}
         p={0}
         aria-label={label}
+        style={{
+          flex: 1,
+          minHeight: 0,
+          overflowY: 'auto',
+        }}
       >
         {rows.map((row) => (
           <Box component="li" key={rowKey(row)} display="block">
