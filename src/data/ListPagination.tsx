@@ -22,17 +22,24 @@ export const ListPagination = ({
   total,
   onChange,
 }: ListPaginationProps) => {
-  if (total <= pageSize) {
+  if (total === 0) {
     return null;
   }
 
   const pages = Math.ceil(total / pageSize);
-  const from = (page - 1) * pageSize + 1;
-  const to = Math.min(page * pageSize, total);
+  const shown = Math.min(page, pages);
+  const from = (shown - 1) * pageSize + 1;
+  const to = Math.min(shown * pageSize, total);
 
   return (
-    <Group justify="space-between" gap="sm">
-      <Text ff="monospace" fz={13} c="gray.6">
+    <Group
+      justify="space-between"
+      gap="xs"
+      style={{
+        flexShrink: 0,
+      }}
+    >
+      <Text ff="monospace" fz={12} c="gray.6">
         {t('list.range', {
           from,
           to,
@@ -41,10 +48,13 @@ export const ListPagination = ({
       </Text>
       <Box component="nav" aria-label={t('list.pages')}>
         <Pagination
-          value={Math.min(page, pages)}
+          value={shown}
           onChange={onChange}
           total={pages}
           siblings={1}
+          size="xs"
+          radius={4}
+          gap={4}
           getItemProps={(item) => ({
             'aria-label': t('list.page', {
               page: item,
