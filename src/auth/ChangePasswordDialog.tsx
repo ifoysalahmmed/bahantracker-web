@@ -1,4 +1,4 @@
-import { ChangePasswordRequest, type Me } from '@gotirekha/schemas';
+import { ChangePasswordRequest, type Me } from '@bahantracker/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Alert,

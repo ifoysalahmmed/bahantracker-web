@@ -1,4 +1,4 @@
-import type { ApiErrorCode } from '@gotirekha/schemas';
+import type { ApiErrorCode } from '@bahantracker/schemas';
 
 export interface PluralMessage {
   zero?: string;

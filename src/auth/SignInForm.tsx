@@ -1,4 +1,4 @@
-import { SignInRequest } from '@gotirekha/schemas';
+import { SignInRequest } from '@bahantracker/schemas';
 import { zodResolver } from '@hookform/resolvers/zod';
 import {
   Alert,

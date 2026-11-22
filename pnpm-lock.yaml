@@ -173,12 +173,12 @@ importers:
         specifier: 5.3.0
         version: 5.3.0
     devDependencies:
+      '@bahantracker/schemas':
+        specifier: github:ifoysalahmmed/bahantracker-schemas#v0.17.0
+        version: https://codeload.github.com/ifoysalahmmed/bahantracker-schemas/tar.gz/36c956f58a9c976dd5ce82e4a044f4587dc17b22
       '@eslint/js':
         specifier: 10.0.1
         version: 10.0.1(eslint@10.14.0)
-      '@gotirekha/schemas':
-        specifier: github:ifoysalahmmed/gotirekha-schemas#v0.9.0
-        version: https://codeload.github.com/ifoysalahmmed/gotirekha-schemas/tar.gz/ef3cfd9b9e4b520167774070ae177d9d8fd966da
       '@hookform/resolvers':
         specifier: 7.0.3
         version: 7.0.3(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(zod@4.6.7)
@@ -298,6 +298,11 @@ packages:
     resolution: {integrity: sha512-WCsemW40Cpc6gouC1SrY6PBaZ+oLRlEVY9XBvZBI7il/HyUrb2nJ505wE1MHEFyDZNnrWDEuy4jL50WVHfTTSQ==}
     engines: {node: '>=6.9.0'}
 
+  '@bahantracker/schemas@https://codeload.github.com/ifoysalahmmed/bahantracker-schemas/tar.gz/36c956f58a9c976dd5ce82e4a044f4587dc17b22':
+    resolution: {gitHosted: true, integrity: sha512-fcD+RDzf/SyZXA27NJIPWReo6GvhIR9uf8/w6p0CRLhgyEXHowR22fkXOaj5cq7fQvOoo3+rT+b45jTPNpXkMg==, tarball: https://codeload.github.com/ifoysalahmmed/bahantracker-schemas/tar.gz/36c956f58a9c976dd5ce82e4a044f4587dc17b22}
+    version: 0.17.0
+    engines: {node: '>=24'}
+
   '@cacheable/memory@2.2.0':
     resolution: {integrity: sha512-CTLKqLItRCEixEAewD3/j9DB3/o96gpTPD4eJ1v+DGOlxZRZncRQkGYqqnAGCscYd6RNeXfGeiuCphsPtqyIfQ==}
 
@@ -369,11 +374,6 @@ packages:
 
   '@fontsource-variable/geist@5.3.0':
     resolution: {integrity: sha512-j0m+vLQuG5XAYoHtGCVu0spvlGreR3EzpECUVzkFmI1mTVnAO38l/NEPDCFgZ177JxzYJCLSmTQibIiYPilGrA==}
-
-  '@gotirekha/schemas@https://codeload.github.com/ifoysalahmmed/gotirekha-schemas/tar.gz/ef3cfd9b9e4b520167774070ae177d9d8fd966da':
-    resolution: {gitHosted: true, integrity: sha512-VE3E6I4YWc0FN+yx0O8cSGBVupAuZRYu2ENEFxIOlK0U8QJtZ8Ca98236eebt0lkwjWIWlWBjTzZ2RiFVlRLzQ==, tarball: https://codeload.github.com/ifoysalahmmed/gotirekha-schemas/tar.gz/ef3cfd9b9e4b520167774070ae177d9d8fd966da}
-    version: 0.9.0
-    engines: {node: '>=24'}
 
   '@hookform/resolvers@7.0.3':
     resolution: {integrity: sha512-beGY1JY6K5cyWlswD4BVf7UTb5MxSjKkjljrRyLPT3KIQzsTU0jOibBKqtdcKqIZYQUUyURed7roLWZtSdAtiQ==}
@@ -1225,6 +1225,10 @@ snapshots:
       '@babel/helper-string-parser': 7.29.13
       '@babel/helper-validator-identifier': 7.29.7
 
+  '@bahantracker/schemas@https://codeload.github.com/ifoysalahmmed/bahantracker-schemas/tar.gz/36c956f58a9c976dd5ce82e4a044f4587dc17b22':
+    dependencies:
+      zod: 4.6.7
+
   '@cacheable/memory@2.2.0':
     dependencies:
       '@cacheable/utils': 2.5.0
@@ -1299,10 +1303,6 @@ snapshots:
   '@fontsource-variable/geist-mono@5.3.0': {}
 
   '@fontsource-variable/geist@5.3.0': {}
-
-  '@gotirekha/schemas@https://codeload.github.com/ifoysalahmmed/gotirekha-schemas/tar.gz/ef3cfd9b9e4b520167774070ae177d9d8fd966da':
-    dependencies:
-      zod: 4.6.7
 
   '@hookform/resolvers@7.0.3(react-hook-form@7.91.0(@types/react@19.3.0)(react@19.3.1))(zod@4.6.7)':
     dependencies:

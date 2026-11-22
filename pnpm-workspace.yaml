@@ -1,2 +1,2 @@
 allowBuilds:
-  '@gotirekha/schemas@https://codeload.github.com/ifoysalahmmed/gotirekha-schemas/tar.gz/ef3cfd9b9e4b520167774070ae177d9d8fd966da': true
+  '@bahantracker/schemas@https://codeload.github.com/ifoysalahmmed/bahantracker-schemas/tar.gz/36c956f58a9c976dd5ce82e4a044f4587dc17b22': true
