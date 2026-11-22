@@ -2,7 +2,7 @@ import {
   ApiError,
   type AccessToken,
   type ApiErrorCode,
-} from '@gotirekha/schemas';
+} from '@bahantracker/schemas';
 
 import {
   announceSignIn,

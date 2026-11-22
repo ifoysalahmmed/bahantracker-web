@@ -2,71 +2,44 @@ interface LogoProps {
   size: number;
 }
 
-const G_ROAD = 'M92.9 41A38 38 0 1 0 98 60H68';
+const MARK_SRC = '/bahantracker-mark.png';
+const MARK_RATIO = 159 / 146;
 
-const G_CENTRE_LINE = 'M92.9 41A38 38 0 1 0 98 60H73';
+const WORDMARK_SRC = '/bahantracker-logo.png';
+const WORDMARK_RATIO = 874 / 185;
 
-export const LogoMark = ({ size }: LogoProps) => (
-  <svg width={size} height={size} viewBox="0 0 120 120" aria-hidden="true">
-    <rect width="120" height="120" rx="28" fill="#0B7A55" />
-    <path
-      d="M79.5 32.2A34 34 0 1 0 94 60H78"
-      fill="none"
-      stroke="#FFFFFF"
-      strokeWidth="16"
-    />
-    <rect x="42" y="51" width="28" height="18" rx="6" fill="#FFFFFF" />
-  </svg>
+const Mark = ({ size }: LogoProps) => (
+  <img
+    src={MARK_SRC}
+    width={Math.round(size * MARK_RATIO)}
+    height={size}
+    alt=""
+    aria-hidden="true"
+    style={{ display: 'block', flexShrink: 0 }}
+  />
 );
 
-export const LogoFull = ({ size }: LogoProps) => (
-  <svg width={size} height={size} viewBox="0 0 120 120" aria-hidden="true">
-    <path
-      d={G_ROAD}
-      fill="none"
-      stroke="#FFFFFF"
-      strokeWidth="16"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-    />
-    <path
-      d={G_CENTRE_LINE}
-      fill="none"
-      stroke="#0B7A55"
-      strokeWidth="2.2"
-      strokeDasharray="5 4.5"
-    />
-    <g transform="translate(56 60)">
-      <rect
-        x="-11.5"
-        y="-7"
-        width="23"
-        height="14"
-        rx="4.5"
-        fill="#101613"
-        stroke="#0B7A55"
-        strokeWidth="3"
-      />
-      <rect x="-7" y="-4.6" width="4" height="9.2" rx="1.5" fill="#9FD9BF" />
-    </g>
-  </svg>
+export const LogoMark = Mark;
+
+export const LogoFull = Mark;
+
+export const LogoWordmark = ({ size }: LogoProps) => (
+  <img
+    src={WORDMARK_SRC}
+    width={Math.round(size * WORDMARK_RATIO)}
+    height={size}
+    alt="BahanTracker"
+    style={{ display: 'block', flexShrink: 0 }}
+  />
 );
 
 export const LogoRoad = () => (
-  <svg
+  <img
+    src={MARK_SRC}
     width="100%"
     height="100%"
-    viewBox="0 0 120 120"
-    opacity="0.14"
+    alt=""
     aria-hidden="true"
-  >
-    <path d={G_ROAD} fill="none" stroke="#FFFFFF" strokeWidth="16" />
-    <path
-      d={G_CENTRE_LINE}
-      fill="none"
-      stroke="#0B7A55"
-      strokeWidth="2.2"
-      strokeDasharray="5 4.5"
-    />
-  </svg>
+    style={{ display: 'block', objectFit: 'contain', opacity: 0.14 }}
+  />
 );

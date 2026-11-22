@@ -32,7 +32,7 @@ export {
   type ChangePassword,
 } from './auth/ChangePasswordDialog.js';
 export { SignInForm } from './auth/SignInForm.js';
-export { LogoFull, LogoMark, LogoRoad } from './brand/Logo.js';
+export { LogoFull, LogoMark, LogoRoad, LogoWordmark } from './brand/Logo.js';
 export {
   DataTable,
   type Column,
