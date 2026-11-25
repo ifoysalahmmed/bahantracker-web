@@ -158,7 +158,7 @@ const requestNewToken = async (): Promise<boolean> => {
 
 const withRefreshLock = (task: () => Promise<boolean>): Promise<boolean> =>
   'locks' in navigator
-    ? navigator.locks.request(`gotirekha-${apiSettings().site}-refresh`, task)
+    ? navigator.locks.request(`bahantracker-${apiSettings().site}-refresh`, task)
     : task();
 
 let refreshing: Promise<boolean> | null = null;
