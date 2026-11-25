@@ -78,7 +78,7 @@ export const configureApi = (next: ApiSettings): void => {
     return;
   }
 
-  channel = new BroadcastChannel(`gotirekha-${next.site}-session`);
+  channel = new BroadcastChannel(`bahantracker-${next.site}-session`);
   channel.addEventListener('message', (event: MessageEvent<unknown>) => {
     if (event.data === SIGNED_OUT) {
       endSession('signed_out');
